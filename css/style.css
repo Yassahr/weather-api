@@ -1,0 +1,207 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+  
+}
+
+html{
+  font-size: 62.5%;
+  
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+ h1,
+ h2,
+ h3,
+ img,
+ p,
+ form {
+  display: flex;
+  justify-content: center;
+
+} 
+ul{
+  list-style: none;
+}
+body{
+  background: repeat-y center/100%  url('htmlbckround.jpg');
+  
+
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+/* header */
+header {
+  background: rgba(255,255,255,.5);
+  padding:3%;
+  color: rgb(22, 151, 197);
+ 
+}
+header > h1{
+  font-size: 3rem;
+}
+header > p,
+form > span,
+select,
+button,
+input{
+  font-size: 1.5rem;
+  
+}
+
+/* Form */
+form > span{
+  margin-left: 10%;
+}
+
+
+
+.container{
+  display: flex;
+  width: 65%;
+  border: 2px black solid;
+  border-radius: 10px;
+  margin: 5% auto;
+  flex-direction: column;
+  background: hsla(196, 74%, 43%, .75);
+  color: #F0EAD6;
+}
+container *{
+  display: flex;
+  
+}
+
+.head{
+  width: 100%;
+}
+/* Weather description */
+h3{
+  font-size: 3rem;
+  margin: 0 auto;
+
+}
+/* Location */
+h2{
+  font-size: 3rem;
+}
+/* Weather Img */
+
+
+.weatherImg{
+  display: block;
+  margin: 0 auto;
+  width: 15%;
+  height: 30%;
+  
+ 
+}
+
+/* Main weather section */
+.main{ 
+  display: flex;
+  flex-flow: column wrap;
+  font-size: 3rem;
+ 
+}
+.main *{
+  font-size: 2rem;
+} 
+.tempDetail{
+  display: flex;
+  flex-direction: row;
+}
+
+.tempDetail ul{
+  padding-top: 2%;
+}
+#temp{
+  font-size: 6rem;
+  flex-basis: 50%;
+  margin: auto 0;
+}
+/* Accesory weather section */
+.weatherDet{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  border-bottom: 1px black solid;
+  gap: 10px;
+
+}
+
+
+/* News Section */
+.newsContainer ul{
+  display: flex;
+  padding: 0;
+}
+.hidden{
+  display: none;
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+@media screen and (min-width: 1000px) {
+  
+  .container{
+    max-width: 750px;
+  }
+
+}
+
+
+/* Loading Function */
+.loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255,255,255,.2);
+  transition: opacity 0.75s, visibility 0.75s;
+}
+.loader-hidden{
+  opacity: 0;
+  visibility:  hidden;
+}
+.loader::after{
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 15px solid rgb(22, 151, 197);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+  from{
+    transform:rotate(0turn);
+  }
+  to{
+    transform:rotate(1turn);
+  }
+} 
